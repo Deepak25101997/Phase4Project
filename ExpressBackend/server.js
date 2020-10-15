@@ -3,16 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-// const User = {
-//     name: "Deepak",
-//     email: "demo@demo.com",
-//     phone: "1478523695",
-//     username: "test",
-//     password: "test"
-// }
-
 // Configuring the database
-const dbConfig = require('./config/database.config.js');
+const dbConfig = require('./config/database.config');
 const mongoose = require('mongoose');
 
 //setting up parsers
@@ -27,7 +19,8 @@ mongoose.Promise = global.Promise;
 // Connecting to the database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
     .then(() => {
         console.log("Successfully connected to the database !");
@@ -47,6 +40,7 @@ app.get("/", (req, res, next) => {
 //  routes imported
 require('./routes/events')(app);
 require('./routes/auth')(app);
+require('./routes/user')(app);
 
 
 app.listen(3001, (err) => {

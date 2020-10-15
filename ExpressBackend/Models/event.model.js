@@ -1,7 +1,7 @@
 const User = require("../Models/user.model");
 const mongoose = require('mongoose'), Schema = mongoose.Schema;
 
-const EventSchema = mongoose.Schema({
+const EventSchema = new mongoose.Schema({
 
     title: {
         type: String,
