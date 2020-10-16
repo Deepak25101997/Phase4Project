@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const config = require("config");
+
 
 // Configuring the database
-const dbConfig = require('./config/database.config');
+const dbUrl = config.get('url');
 const mongoose = require('mongoose');
 
 //setting up parsers
@@ -17,7 +19,7 @@ app.use(cors())
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(dbConfig.url, {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
