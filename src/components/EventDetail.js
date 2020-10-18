@@ -81,7 +81,7 @@ class EventDetail extends Component {
                                     <td>
                                         <Link to="/events" className="btn btn-info">Back to Browsing Events</Link>
                                     </td>
-                                    {getUser() === null ? "" : <td>
+                                    {getUser() === null ? <td></td> : <td>
                                         <Link to="/myEvents" className="btn btn-success">Back to Your Events</Link>
                                     </td>}
                                 </tr>

@@ -197,14 +197,17 @@ exports.getEventsByFilter = (req, res, next) => {
     const type = req.body.type;
     const startDate = req.body.startDate;
     const endDate = req.body.endDate;
-    const price = req.body.price;
+
+    console.log(category);
+    console.log(type);
+    console.log(startDate);
+    console.log(endDate);
 
     Event.find({
         category: category,
         type: type,
         startDate: { $gte: startDate },
-        endDate: { $lte: endDate },
-        price: price
+        endDate: { $lte: endDate }
     })
         .populate({
             path: 'user',

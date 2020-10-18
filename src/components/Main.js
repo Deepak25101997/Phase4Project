@@ -8,6 +8,7 @@ import EventAdd from '../components/EventAdd';
 import EventDetail from '../components/EventDetail';
 import MyEvents from '../components/MyEvents';
 import EventEdit from '../components/EventEdit';
+import EventDetailSearch from '../components/EventDetailSearch';
 
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicRoute from '../Utils/PublicRoute';
@@ -41,6 +42,9 @@ class Main extends Component {
                                         <Link to={'/events'} className="nav-link">BrowseEvents</Link>
                                     </li>
                                     <li className="nav-item">
+                                        <Link to={'/eventDetailSearch'} className="nav-link">Detailed Search</Link>
+                                    </li>
+                                    <li className="nav-item">
                                         <Link to={'/eventAdd'} className="nav-link">Add Event</Link>
                                     </li>
                                     <li className="nav-item">
@@ -66,6 +70,7 @@ class Main extends Component {
                         <Route exact path="/signUp" component={SignUp} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/events" component={Events} />
+                        <Route exact path="/eventDetailSearch" component={EventDetailSearch} />
                         <Route exact path="/myEvents" component={MyEvents} />
                         <Route exact path="/eventDetail/:id" component={EventDetail} />
                         <Route exact path="/eventEdit/:id" component={EventEdit} />

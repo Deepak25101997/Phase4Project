@@ -20,11 +20,7 @@ module.exports = function (app) {
     //get all the events in the db
     app.get("/events", eventController.getAllEvents);
 
-    // ****** Advance searches by filtering *****
-    // by category, event type, time of event, price
-    // single filter or any combinations of these filters
-    // can be passed in query string
-    // the route for all these will be as follows
-    app.get("/events/filter", eventController.getEventsByFilter);
+    // ****** Advance searches *****
+    app.post("/events/filter", eventController.getEventsByFilter);
 
 }
