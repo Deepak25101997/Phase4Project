@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { getToken } from '../Utils/Common';
 
 
 class EventEdit extends Component {
@@ -53,7 +54,11 @@ class EventEdit extends Component {
             });
         }
         else {
-            Axios.put("http://localhost:3001/event/" + this.props.match.params.id, reqObject)
+            Axios.put("http://localhost:3001/event/" + this.props.match.params.id, reqObject, {
+                headers: {
+                    "x-auth-token": getToken()
+                }
+            })
                 .then(res => {
                     this.setState({
                         title: res.data.title,

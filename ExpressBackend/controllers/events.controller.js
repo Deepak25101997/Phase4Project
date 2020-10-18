@@ -198,11 +198,6 @@ exports.getEventsByFilter = (req, res, next) => {
     const startDate = req.body.startDate;
     const endDate = req.body.endDate;
 
-    console.log(category);
-    console.log(type);
-    console.log(startDate);
-    console.log(endDate);
-
     Event.find({
         category: category,
         type: type,
@@ -215,7 +210,7 @@ exports.getEventsByFilter = (req, res, next) => {
         })
         .exec((err, events) => {
             if (err) {
-                return res.status(500).json({
+                res.status(500).json({
                     message: "Unable to find events due to error : " + err
                 })
             }

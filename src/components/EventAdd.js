@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getUser } from '../Utils/Common';
+import { getUser, getToken } from '../Utils/Common';
 import Axios from 'axios';
 
 class EventAdd extends Component {
@@ -55,7 +55,11 @@ class EventAdd extends Component {
             });
         }
         else {
-            Axios.post("http://localhost:3001/event/user/" + this.state.user, reqObject)
+            Axios.post("http://localhost:3001/event/user/" + this.state.user, reqObject, {
+                headers: {
+                    "x-auth-token": getToken()
+                }
+            })
                 .then(res => {
                     this.props.history.push("/events")
                 })
@@ -201,9 +205,9 @@ class EventAdd extends Component {
                             placeholder="Enter '0' if its free" />
                         {formErrors.price.length > 0 && (<span>{formErrors.price}</span>)}
                     </div>
-                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}<br />
-                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}<br />
-                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}<br />
+                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}
+                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}
+                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { getUser } from '../Utils/Common';
+import { getUser, getToken } from '../Utils/Common';
 import Axios from 'axios';
 
 class MyEvents extends Component {
@@ -22,7 +22,11 @@ class MyEvents extends Component {
             this.setState({ userIdError: true })
         }
         else {
-            Axios.get("http://localhost:3001/user/myevents/" + getUser().id)
+            Axios.get("http://localhost:3001/user/myevents/" + getUser().id, {
+                headers: {
+                    "x-auth-token": getToken()
+                }
+            })
                 .then((res) => {
                     const eventsList = res.data;
                     this.setState({ events: eventsList, userIdError: false });

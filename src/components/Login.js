@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { setUserSession } from '../Utils/Common';
+import { setUserSession, getUser } from '../Utils/Common';
 import Axios from 'axios';
 
 const emailRegex = RegExp(
@@ -91,7 +91,8 @@ class Login extends Component {
 
         return (
             <div className="container" style={{ width: "60%" }}>
-                <form onSubmit={this.handleLogin}>
+
+                {!getUser() ? <form onSubmit={this.handleLogin}>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
                         <input type="email" className={`form-control ${formErrors.email.length > 0 ? "is-invalid" : null}`}
@@ -109,7 +110,7 @@ class Login extends Component {
                     </div>
                     {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}<br />
                     <button type="submit" className="btn btn-primary">Login</button>
-                </form>
+                </form> : ""}
             </div>
         )
     }

@@ -12,6 +12,7 @@ import EventDetailSearch from '../components/EventDetailSearch';
 
 import PrivateRoute from '../Utils/PrivateRoute';
 import { getToken, removeUserSession, getUser, setUserSession } from '../Utils/Common';
+import { get } from 'jquery';
 
 
 
@@ -23,6 +24,10 @@ class Main extends Component {
         this.forceUpdate();
     }
 
+
+    handleLogin = (event) => {
+        this.forceUpdate();
+    }
 
     render() {
         return (
@@ -51,15 +56,15 @@ class Main extends Component {
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav ml-auto">
-                                    <li className="nav-item">
-                                        <Link to={'/signUp'} className="nav-link" style={{ color: "white" }}>Sign Up</Link>
-                                    </li>
-                                    <li className="nav-item .ml-auto">
-                                        <Link to={'/login'} className="nav-link" style={{ color: "white" }}>Login</Link>
-                                    </li>
-                                    <li className="nav-item .ml-auto">
+                                    {getToken() === null ? <li className="nav-item">
+                                        <Link to={'/signUp'} onClick={this.handleLogin} className="nav-link" style={{ color: "white" }}>Sign Up</Link>
+                                    </li> : ""}
+                                    {getToken() === null ? <li className="nav-item .ml-auto">
+                                        <Link to={'/login'} onClick={this.handleLogin} className="nav-link" style={{ color: "white" }}>Login</Link>
+                                    </li> : ""}
+                                    {getToken() !== null ? <li className="nav-item .ml-auto">
                                         <button onClick={this.handleLogout} className="btn btn-danger" style={{ color: "white" }}>Logout</button>
-                                    </li>
+                                    </li> : ""}
                                 </ul>
                             </div>
                         </nav> <br />
