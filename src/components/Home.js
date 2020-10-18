@@ -59,7 +59,7 @@ class Home extends Component {
     render() {
         return (
             <div className="container">
-                <h1 className="title" style={{ color: "purple", marginTop: "0.5%", fontSize: 30 }}>Welcome {getUser().name} to FindMyEvents.com </h1><br />
+                <h1 className="title" style={{ color: "purple", marginTop: "0.5%", fontSize: 30 }}>Welcome {getUser() !== null ? getUser().name : ""} to FindMyEvents.com </h1><br />
                 <p className="title" style={{ color: "brown" }}><span style={{ fontWeight: "bold" }}>First time user ? </span>
                 SignUp quickly and start using this app for adding/managing your events.</p>
                 <p className="title" style={{ color: "brown" }}><span style={{ fontWeight: "bold" }}>Want to see the events directly ?</span> Simple browse through all the
