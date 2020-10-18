@@ -39,7 +39,11 @@ class MyEvents extends Component {
 
 
     deleteNote(id) {
-        Axios.delete('http://localhost:3001/event/' + id)
+        Axios.delete('http://localhost:3001/event/' + id, {
+            headers: {
+                "x-auth-token": getToken()
+            }
+        })
             .then((result) => {
                 alert("Event deleted successfully !");
                 this.getEvents();
