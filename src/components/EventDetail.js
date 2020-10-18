@@ -73,7 +73,7 @@ class EventDetail extends Component {
                                     </tr>
                                     <tr>
                                         <th>Organizer Contact</th>
-                                        <td>{getUser() === null ? <p class="text-danger">You need to Login to view contact number !</p> : this.state.event.organizerContact}</td>
+                                        <td>{getUser() === null ? <p className="text-danger">You need to Login to view contact number !</p> : this.state.event.organizerContact}</td>
                                     </tr>
                                     <tr>
                                         <th>Price</th>

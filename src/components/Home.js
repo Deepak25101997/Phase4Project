@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 
@@ -37,7 +37,7 @@ class Home extends Component {
     handleChange = (event) => {
         event.preventDefault();
         const text = event.target.value.toLowerCase();
-        if (text.length == 0 || text == "") {
+        if (text.length === 0 || text === "") {
             this.setState({ searchedEvents: [] });
         }
         this.setState({ search: text });

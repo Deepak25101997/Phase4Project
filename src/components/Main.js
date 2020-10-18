@@ -11,8 +11,7 @@ import EventEdit from '../components/EventEdit';
 import EventDetailSearch from '../components/EventDetailSearch';
 
 import PrivateRoute from '../Utils/PrivateRoute';
-import { getToken, removeUserSession, getUser, setUserSession } from '../Utils/Common';
-import { get } from 'jquery';
+import { getToken, removeUserSession } from '../Utils/Common';
 
 
 
@@ -37,8 +36,8 @@ class Main extends Component {
                         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                             <Link to={'/'} className="navbar-brand">FindMyEvents</Link>
 
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                                <span class="navbar-toggler-icon"></span>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span className="navbar-toggler-icon"></span>
                             </button>
                             <div className="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul className="navbar-nav mr-auto">

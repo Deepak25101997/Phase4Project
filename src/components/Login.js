@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { setUserSession, getUser } from '../Utils/Common';
 import Axios from 'axios';
 
+
+
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );

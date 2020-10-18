@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getUser, getToken } from '../Utils/Common';
 import Axios from 'axios';
 
@@ -53,7 +53,6 @@ class MyEvents extends Component {
 
 
     render() {
-
         var err = null;
         { this.state.userIdError ? err = true : err = false }
 
