@@ -30,7 +30,7 @@ class EventDetail extends Component {
                 <div className="panel panel-default">
                     <div className="panel-heading">
                         <h3 className="panel-title">
-                            Details of {this.state.event.title}
+                            Details of <span className="text-success">{this.state.event.title}</span>
                         </h3>
                         <br />
                     </div>
@@ -81,12 +81,15 @@ class EventDetail extends Component {
                                     <td>
                                         <Link to="/events" className="btn btn-info">Back to Browsing Events</Link>
                                     </td>
+                                    {getUser() === null ? "" : <td>
+                                        <Link to="/myEvents" className="btn btn-success">Back to Your Events</Link>
+                                    </td>}
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
+            </div >
 
         )
     }

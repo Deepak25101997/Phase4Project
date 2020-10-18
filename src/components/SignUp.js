@@ -94,7 +94,7 @@ class SignUp extends Component {
                 formErrors.username = value.length < 5 ? "Minimum 5 characters are required" : "";
                 break;
             case "password":
-                formErrors.password = value.length < 8 ? "Minimum 10 characters are required" : "";
+                formErrors.password = value.length < 8 ? "Minimum 8 characters are required" : "";
                 break;
             default:
                 break;

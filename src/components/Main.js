@@ -6,10 +6,11 @@ import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 import EventAdd from '../components/EventAdd';
 import EventDetail from '../components/EventDetail';
+import MyEvents from '../components/MyEvents';
 
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicRoute from '../Utils/PublicRoute';
-import { getToken, removeUserSession, setUserSession } from '../Utils/Common';
+import { getToken, removeUserSession, getUser, setUserSession } from '../Utils/Common';
 
 
 
@@ -41,6 +42,9 @@ class Main extends Component {
                                     <li className="nav-item">
                                         <Link to={'/eventAdd'} className="nav-link">Add Event</Link>
                                     </li>
+                                    <li className="nav-item">
+                                        <Link to={'/myEvents'} className="nav-link">Your Events</Link>
+                                    </li>
                                 </ul>
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item">
@@ -61,6 +65,7 @@ class Main extends Component {
                         <Route exact path="/signUp" component={SignUp} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/events" component={Events} />
+                        <Route exact path="/myEvents" component={MyEvents} />
                         <Route exact path="/eventDetail/:id" component={EventDetail} />
                         <PrivateRoute exact path="/eventAdd" component={EventAdd} />
                     </Switch>
