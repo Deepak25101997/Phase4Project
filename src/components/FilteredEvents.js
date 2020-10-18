@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { getUser } from '../Utils/Common';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import Axios from 'axios';
 
 
 class FilteredEvents extends Component {

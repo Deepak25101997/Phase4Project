@@ -11,16 +11,11 @@ import EventEdit from '../components/EventEdit';
 import EventDetailSearch from '../components/EventDetailSearch';
 
 import PrivateRoute from '../Utils/PrivateRoute';
-import PublicRoute from '../Utils/PublicRoute';
 import { getToken, removeUserSession, getUser, setUserSession } from '../Utils/Common';
 
 
 
 class Main extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    // }
 
     handleLogout = (event) => {
         event.preventDefault();
@@ -36,30 +31,34 @@ class Main extends Component {
                     <div className="container">
                         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                             <Link to={'/'} className="navbar-brand">FindMyEvents</Link>
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul className="navbar-nav mr-auto">
                                     <li className="nav-item">
-                                        <Link to={'/events'} className="nav-link">BrowseEvents</Link>
+                                        <Link to={'/events'} className="nav-link" style={{ color: "white" }}>Browse Events</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to={'/eventDetailSearch'} className="nav-link">Detailed Search</Link>
+                                        <Link to={'/eventDetailSearch'} className="nav-link" style={{ color: "white" }}>Detailed Search</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to={'/eventAdd'} className="nav-link">Add Event</Link>
+                                        <Link to={'/eventAdd'} className="nav-link" style={{ color: "white" }}>Add Event</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to={'/myEvents'} className="nav-link">Your Events</Link>
+                                        <Link to={'/myEvents'} className="nav-link" style={{ color: "white" }}>Your Events</Link>
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item">
-                                        <Link to={'/signUp'} className="nav-link">Sign Up</Link>
+                                        <Link to={'/signUp'} className="nav-link" style={{ color: "white" }}>Sign Up</Link>
                                     </li>
                                     <li className="nav-item .ml-auto">
-                                        <Link to={'/login'} className="nav-link">Login</Link>
+                                        <Link to={'/login'} className="nav-link" style={{ color: "white" }}>Login</Link>
                                     </li>
                                     <li className="nav-item .ml-auto">
-                                        <button onClick={this.handleLogout} className="btn btn-danger">Logout</button>
+                                        <button onClick={this.handleLogout} className="btn btn-danger" style={{ color: "white" }}>Logout</button>
                                     </li>
                                 </ul>
                             </div>

@@ -90,7 +90,7 @@ class Login extends Component {
         const { formErrors } = this.state;
 
         return (
-            <div className="container">
+            <div className="container" style={{ width: "60%" }}>
                 <form onSubmit={this.handleLogin}>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>

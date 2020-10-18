@@ -6,7 +6,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/jquery/dist/jquery.min";
 import "../node_modules/bootstrap/dist/js/bootstrap.min";
 import Main from './components/Main'
-// import { getToken } from "./Utils/Common";
+
 
 
 ReactDOM.render(

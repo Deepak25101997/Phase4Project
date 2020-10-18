@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { getUser } from '../Utils/Common';
 import Axios from 'axios';
 
 

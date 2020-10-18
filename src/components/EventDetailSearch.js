@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { getUser } from '../Utils/Common';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Axios from 'axios';
 import FilteredEvents from './FilteredEvents';
 
@@ -71,7 +69,7 @@ class EventDetailSearch extends Component {
     render() {
 
         return (
-            <div className="container">
+            <div className="container" style={{ width: "60%" }}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="category">Category</label>
@@ -116,9 +114,9 @@ class EventDetailSearch extends Component {
                             className={`form-control`}
                             id="endDate" onChange={this.handleChange} />
                     </div>
-                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}<br />
-                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}<br />
-                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}<br />
+                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}
+                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}
+                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}
                     <button type="submit" className="btn btn-primary">Search</button>
                 </form>
 

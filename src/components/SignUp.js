@@ -110,7 +110,7 @@ class SignUp extends Component {
         const { formErrors } = this.state;
 
         return (
-            <div className="container">
+            <div className="container" style={{ width: "60%" }}>
                 <form onSubmit={this.handleSignUp}>
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
