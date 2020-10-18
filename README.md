@@ -6,6 +6,10 @@ Email: deepak.kumar@prolim.com
 
 ## Available Scripts
 
+### `npm install`
+
+Run this script in both the root folder and the ExpressBackend folder to install all the dependencies.
+
 ### `npm start`
 
 After extracting the project, you first need to start the express backend server.<br />
