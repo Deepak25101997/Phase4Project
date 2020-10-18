@@ -124,7 +124,7 @@ class EventDetailSearch extends Component {
 
                 {this.state.events.length > 0 ?
                     <div className="container" style={{ marginTop: 20 }}>
-                        
+                        <div class="alert alert-success" role="alert">Yayy !! Found the results.</div>
                         <FilteredEvents events={this.state.events} />
                     </div> : ""
                 }
