@@ -7,6 +7,7 @@ import SignUp from '../components/SignUp';
 import EventAdd from '../components/EventAdd';
 import EventDetail from '../components/EventDetail';
 import MyEvents from '../components/MyEvents';
+import EventEdit from '../components/EventEdit';
 
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicRoute from '../Utils/PublicRoute';
@@ -67,6 +68,7 @@ class Main extends Component {
                         <Route exact path="/events" component={Events} />
                         <Route exact path="/myEvents" component={MyEvents} />
                         <Route exact path="/eventDetail/:id" component={EventDetail} />
+                        <Route exact path="/eventEdit/:id" component={EventEdit} />
                         <PrivateRoute exact path="/eventAdd" component={EventAdd} />
                     </Switch>
                 </Router>

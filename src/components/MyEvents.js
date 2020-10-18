@@ -83,7 +83,7 @@ class MyEvents extends Component {
                                                 <p className="card-title">Category: {eventValue.category}</p>
                                                 <div className="container">
                                                     <Link to={'/eventDetail/' + eventValue._id} style={{ margin: 2 }} className="btn btn-primary btn-sm">Details</Link>
-                                                    <Link to={'/eventDetail/' + eventValue._id} style={{ margin: 2 }} className="btn btn-warning btn-sm">Edit</Link>
+                                                    <Link to={'/eventEdit/' + eventValue._id} style={{ margin: 2 }} className="btn btn-warning btn-sm">Edit</Link>
                                                     <button onClick={this.deleteNote.bind(this, eventValue._id)} style={{ margin: 2 }} className="btn btn-danger btn-sm">Delete</button>
                                                 </div>
                                             </div>
