@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 import EventAdd from '../components/EventAdd';
+import EventDetail from '../components/EventDetail';
 
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicRoute from '../Utils/PublicRoute';
@@ -14,10 +15,9 @@ import { getToken, removeUserSession, setUserSession } from '../Utils/Common';
 
 class Main extends Component {
 
-    constructor(props) {
-        super(props);
-
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     handleLogout = (event) => {
         event.preventDefault();
@@ -31,7 +31,7 @@ class Main extends Component {
             <div className="container" style={{ marginTop: 20 }}>
                 <Router>
                     <div className="container">
-                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                             <Link to={'/'} className="navbar-brand">FindMyEvents</Link>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto">
@@ -60,7 +60,8 @@ class Main extends Component {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/signUp" component={SignUp} />
                         <Route exact path="/login" component={Login} />
-                        <PrivateRoute exact path="/events" component={Events} />
+                        <Route exact path="/events" component={Events} />
+                        <Route exact path="/eventDetail/:id" component={EventDetail} />
                         <PrivateRoute exact path="/eventAdd" component={EventAdd} />
                     </Switch>
                 </Router>

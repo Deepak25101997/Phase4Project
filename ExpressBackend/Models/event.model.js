@@ -36,7 +36,7 @@ const EventSchema = new mongoose.Schema({
         required: true
     },
     organizerContact: {
-        type: String,
+        type: Number,
         required: true
     },
     price: {

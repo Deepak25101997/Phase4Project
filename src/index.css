@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title{
+  font-family: 'Averia Libre';font-size: 22px;
+}
+
+.card-detail{
+  font-family: 'Bellota Text';font-size: 22px;
+}

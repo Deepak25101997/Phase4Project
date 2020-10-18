@@ -6,16 +6,6 @@ const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
-const formValid = (formErrors) => {
-    let valid = true;
-
-    Object.values(formErrors).forEach(value => {
-        value.length > 0 && (valid = false)
-    });
-
-    return valid;
-}
-
 
 class Login extends Component {
 
