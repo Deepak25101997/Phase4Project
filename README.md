@@ -8,7 +8,7 @@ Email: deepak.kumar@prolim.com
 
 ### `npm install`
 
-Run this script in both the root folder and the ExpressBackend folder to install all the dependencies.
+Run this script in both, the root folder and the ExpressBackend folder to install all the dependencies.
 
 ### `npm start`
 
