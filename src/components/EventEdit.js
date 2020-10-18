@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { getToken } from '../Utils/Common';
-
+import { Link } from 'react-router-dom';
 
 class EventEdit extends Component {
 
@@ -248,12 +248,13 @@ class EventEdit extends Component {
                             value={this.state.price || ''} />
                         {formErrors.price.length > 0 && (<span>{formErrors.price}</span>)}
                     </div>
-                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}<br />
-                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}<br />
-                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}<br />
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    {this.state.submitError && <><div className="alert alert-danger" role="alert">{this.state.submitError}</div><br /></>}
+                    {this.state.startDate === null && <><div className="alert alert-danger" role="alert">Choose a Start Date</div><br /></>}
+                    {this.state.endDate === null && <><div className="alert alert-danger" role="alert">Choose a End Date</div><br /></>}
+                    <button type="submit" className="btn btn-primary">Submit</button>&nbsp;&nbsp;
+                    <Link to={'/myEvents'} className="btn btn-success" >Back To Your Events</Link>
                 </form>
-            </div>
+            </div >
         )
     }
 

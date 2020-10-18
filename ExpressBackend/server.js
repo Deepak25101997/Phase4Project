@@ -34,7 +34,7 @@ mongoose.connect(dbUrl, {
 
 app.get("/", (req, res, next) => {
     res.status(200).json({
-        message: "Hello from back"
+        message: "Express backend server is listening at this port...."
     });
 })
 
